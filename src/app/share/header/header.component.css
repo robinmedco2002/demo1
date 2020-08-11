@@ -1,0 +1,45 @@
+
+
+header { 
+
+background-color: skyblue;
+width: 100%;
+margin: 0px;
+padding: 20px;
+
+height:8vh;
+ /*Or fixed pixel unit*/
+
+
+}
+
+nav a{
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 1px;
+    margin: 5px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 8px;
+    }
+    
+    
+    nav a:visited, a:link {
+    color: #607D8B;
+    }
+    
+    nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC ;
+    
+    }
+    
+    nav a.active {
+    color: #039be5;
+    }
+
+
+
+
+
+    

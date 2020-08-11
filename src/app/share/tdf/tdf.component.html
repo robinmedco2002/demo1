@@ -1,0 +1,87 @@
+
+<div class="container-fluid">
+<h2> TDF -- Template Driven Form </h2>
+<p></p><p></p>
+{{userForm.value | json}}
+
+
+<form #userForm="ngForm"   (ngSubmit)="onSubmit(userForm.value)"    >
+
+
+
+
+
+      <div class="form-group col-4">
+            <label>Full name</label>
+          <input type="text" class="form-control"  [class.is-invalid]="fullname.invalid && fullname.touched" minlength="3" maxlength="30"  name="fullname" ngModel required #fullname="ngModel" >
+          <small *ngIf="fullname.invalid && fullname.touched " class="text-danger"> Name Field is required</small>
+      </div>
+
+      <div class="form-group col-4">
+        <label>Mobile</label>
+      <input type="number" class="form-control" [class.is-invalid]="mobile.invalid && mobile.touched" onKeyPress="if(this.value.length==10) return false;" pattern="[789][0-9]{9}" name="mobile" ngModel required #mobile="ngModel" >
+      <small *ngIf="mobile.invalid && mobile.touched " class="text-danger"> Valid Mobile number with 10 digits & should be started with 7 or 8 or 9</small>
+  </div>
+
+  <div class="form-group col-4">
+    <label>Email</label>
+  <input type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched" 
+  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="email" ngModel required #email="ngModel" >
+  <small *ngIf="email.invalid && email.touched " class="text-danger"> Valid mail id is required</small>
+</div>
+
+
+
+<div class="form-group col-4">
+  <label>Age</label>
+  <input type="number" class="form-control"   [class.is-invalid]="age.invalid && age.touched" name="age" onKeyPress="if(this.value.length==2) return false;"  
+  ngModel #age="ngModel" required>
+  <small *ngIf="age.invalid && age.touched " class="text-danger"> Age is required</small>
+</div>
+
+
+
+    <div class="form-group col-4">
+      <label>Gender</label>
+      <div class="form-check" >
+        <input class="form-check-input" type="radio" ngModel name="Gender" value="Male" #gender="ngModel" required>
+        <label class="form-check-label"> Male </label> 
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" ngModel name="Gender" value="Female" #gender="ngModel" required >
+        <label class="form-check-label"> Female </label> 
+      </div>
+      <small *ngIf="gender.invalid && gender.touched " class="text-danger"> Gender is required</small>
+</div>
+
+ 
+
+   
+    <div class="from-group col-md-2 ">
+        <label> Country  </label>
+        <select class="custom-select" name="country" >
+            <option selected> Choose Name </option>
+            <option *ngFor="let countr of country">{{ countr }}</option>
+     </select>
+    </div>
+
+<p></p>
+    
+  <div class="form-group col-4">
+    <input class="form-check-input" type="checkbox" name="subscribe" ngModel #subscribe="ngModel" required [class.is-invalid]="subscribe.invalid && subscribe.touched" />
+    <div>
+      <label class="form-check-label"> Send me Promotional Offers
+      </label>
+    </div>
+<small *ngIf="subscribe.invalid && subscribe.touched" class="text-danger"> Promotional offers is required field</small>
+</div>
+
+
+<p></p>
+            <button class="btn btn-primary" [disabled]="userForm.invalid" type="submit"  > Submit </button>
+
+<p></p>
+
+</form>
+
+</div>

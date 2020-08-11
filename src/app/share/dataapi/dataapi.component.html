@@ -1,0 +1,24 @@
+
+<h2> Show List from API Call data (https://jsonplaceholder.typicode.com/todos)</h2>
+
+
+<table border="1" >
+
+<tr style="color: #006666; background-color:skyblue; text-align: center; text-transform: capitalize; font-weight: bold;  ">
+    <td> ID </td>
+    <td>userID</td>
+    <td>Title</td>
+    <td>completed</td>
+</tr>
+
+<tr *ngFor="let item of data" style="color:#ffffff; background-color:#3399FF; text-transform: capitalize;   ">
+    <td> {{item.id}} </td>
+    <td>{{item.userId}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.completed}}</td>
+</tr>
+
+
+
+
+</table>

@@ -1,0 +1,176 @@
+<h2> Call Function Button click</h2>
+<h3> button click alart message function Call</h3>
+<button (click)="btnclick()" class="btn  btn-primary"> Click </button> 
+<br/> <br/>
+
+<h3> button click alart message function Call 2nd Way</h3>
+<button (click)="btnclick2  ('Welcometo Soft Media Solution')" class="btn  btn-primary"> Click </button>
+<br/> <br/>
+
+<h3> button click Text Box message Show on Console Button Click Function</h3>
+<input type="text" #box />
+<button (click)="myEvent(box.value)" class="btn  btn-primary"> Click </button>
+<br/> <br/>
+
+<h3> Text Box message Show on View</h3>
+<input type="text" (keyup)="myEvent($event.target.value)" />
+{{myName}}
+
+
+<h3> button click Text Box message Show on View</h3>
+<input type="text" #box3 />
+<button (click)="myEvent(box3.value)" class="btn  btn-primary"> Click </button>
+{{myName}}
+<br/>
+
+<hr/>
+
+<h2> ngIf</h2>
+
+<h1 *ngIf="show">
+    This messgae show Ngif Show because show function is true
+</h1>
+<hr/>
+<h2> ngIf else</h2>
+
+<h1 *ngIf="show2=='yes' else elseshow2">
+    This messgae show2 -- Ngif and else function
+</h1>
+<ng-template #elseshow2>
+  <h2>  This is else messgae show </h2>
+</ng-template>
+
+
+<hr/>
+<h2> ngIf if else Multiplr colour choose</h2>
+
+<ng-template [ngIf]="show3=='red'">
+    <h1 style="color: red;"> Red Colour Show</h1>
+</ng-template>
+
+<ng-template [ngIf]="show3=='green'">
+    <h1 style="color: green;"> Green Colour Show</h1>
+</ng-template>
+
+<ng-template [ngIf]="show3=='blue'">
+    <h1 style="color: blue;"> Blue Colour Show</h1>
+</ng-template>
+
+<ng-template [ngIf]="show3=='pink'">
+    <h1 style="color: pink;"> Pink Colour Show</h1>
+</ng-template>
+
+<hr/>
+<h2> ngSwitch Case Multiplr colour choose one</h2>
+
+<div [ngSwitch]="color">
+
+    <h1 *ngSwitchCase="'red'">
+        This is Red Colour
+    </h1>
+
+    <h1 *ngSwitchCase="'green'">
+        This is Green Colour
+    </h1>
+
+    <h1 *ngSwitchCase="'blue'">
+        This is Blue Colour
+    </h1>
+
+    <h1 *ngSwitchCase="'purple'">
+        This is Purple Colour
+    </h1>
+
+</div>
+
+<hr/>
+<!-- <h2> ngFor Loop Arraye 2 types 1 type normal only name show</h2>
+
+<h2 *ngFor="let  item of  data">
+    {{item}}
+</h2> -->
+
+
+<hr/>
+<h2> ngFor Loop Arraye 2 types 2nd type multiple value show on table</h2>
+
+<table style="color: royalblue; text-align: center;" border="1" >
+<tr>
+    <td>  <b>Name </b></td>
+    <td><b> Age </b></td>
+    <td><b> Sex </b></td>
+    <td><b> Mobile </b></td>
+    <td><b> Country </b></td>
+
+</tr>
+    <tr *ngFor="let item of data">
+        <td>    {{item.name}}   </td>
+        <td>
+            {{item.age}}
+        </td>
+        <td>
+            {{item.sex}}
+        </td>
+        <td>
+            {{item.mobile}}
+        </td>
+        <td>
+            {{item.country}}
+        </td>
+
+    </tr>
+
+
+</table>
+
+
+
+
+<hr/>
+<h2> Style Binding Samples</h2>
+
+<h1 style="color: red;"> Normal Style</h1>
+
+<h1 [style.color]="'green'"> Style Binding</h1>
+<h1 [style.backgroundColor]="'green'"> Style Binding</h1>
+
+<!-- color variable set in ts  file upside -->
+ <h1 [style.color]="color"> Dynamic Style Binding</h1> 
+
+<h2> Button Click Color change</h2>
+
+<h1 [style.color]="color"> Button Click Dynamic Style Binding Color change</h1>
+<button (click)="updateColor()" class="btn  btn-primary">Update Color</button>
+
+<h1 [style.color]="err? 'red' :'green'"> Conditional style Binding with error red and green</h1>
+
+
+
+<hr/>
+<h2> Angular Bootstrap code through website</h2>
+<p>
+    <ngb-alert [dismissible]="false">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+  </p>
+
+
+
+
+  <hr/>
+<h2> Angular Material use through website</h2>
+
+<button mat-raised-button color="primary"> Material Button</button>
+
+
+<h2> Matterial Slider</h2>
+
+<mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
+<mat-slider vertical></mat-slider>
+
+<mat-slider invert></mat-slider>
+<mat-slider thumbLabel tickInterval="1"></mat-slider>
+<mat-slider step="4" tickInterval="3"></mat-slider>
+<mat-slider tickInterval="auto"></mat-slider>
+
+
